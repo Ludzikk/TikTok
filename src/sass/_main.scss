@@ -24,6 +24,7 @@ main {
 	&__links-link {
 		display: inline-block;
 		padding: 0.25em 1em;
+		margin-top: 1em;
 		font-size: 1.2rem;
 		text-decoration: none;
 		color: grey;
@@ -58,9 +59,7 @@ main {
 	}
 
 	&__line {
-		height: 115px;
-		background-color: $grey;
-		border: none;
+		border: 1px solid $grey;
 	}
 
 	&__list {
