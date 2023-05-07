@@ -1,9 +1,46 @@
 @use "./colors" as *;
 
+main {
+	display: flex;
+}
+
+.main__content {
+	margin: 0 auto;
+	margin-top: 100px;
+	height: 200vh;
+}
+
 .nav-side {
+	position: fixed;
+	left: 0;
+	top: 72px;
 	display: flex;
 	flex-direction: column;
 	width: 200px;
+	height: calc(100vh - 72px);
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	&__links-link {
+		display: inline-block;
+		padding: 0.25em 1em;
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: grey;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__links-yeartext {
+		display: block;
+		padding: 0.5em 1em;
+		font-size: 1.2rem;
+		text-align: center;
+		text-decoration: none;
+		color: grey;
+	}
 
 	&__text {
 		padding: 0.75em 1em;
@@ -13,7 +50,7 @@
 			padding-bottom: 1.25em;
 			color: $pink;
 			text-decoration: none;
-            
+
 			&:hover {
 				text-decoration: underline;
 			}
@@ -21,7 +58,7 @@
 	}
 
 	&__line {
-		height: 1px;
+		height: 115px;
 		background-color: $grey;
 		border: none;
 	}
@@ -85,6 +122,13 @@
 
 			&-right-text {
 				font-size: 1.6rem;
+
+				&-verified .fa-check {
+					padding: 0.15em;
+					font-size: 1.4rem;
+					border-radius: 50%;
+					background-color: rgb(131, 162, 255);
+				}
 
 				&--smaller {
 					font-size: 1.4rem;
