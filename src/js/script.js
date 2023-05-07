@@ -3,6 +3,9 @@ const amounts = document.querySelectorAll(
 	".main__content-videobox-follow-buttons-button-amount"
 );
 const likeBtn = document.querySelectorAll(".heart");
+const msgIcon = document.querySelector(".msg");
+const lastMsgIcon = document.querySelector(".lastmsg");
+const profileIcon = document.querySelector(".nav__links-list-item-profile-link-picture")
 let num;
 
 const handleCurrentYear = () => {
@@ -38,6 +41,36 @@ const likeVideo = () => {
 		});
 	});
 };
+
+msgIcon.addEventListener("mouseenter", () => {
+	const popup = msgIcon.firstElementChild;
+	popup.classList.toggle("hidden");
+});
+
+msgIcon.addEventListener("mouseleave", () => {
+	const popup = msgIcon.firstElementChild;
+	popup.classList.toggle("hidden");
+});
+
+lastMsgIcon.addEventListener("mouseenter", () => {
+	const popup = lastMsgIcon.lastElementChild;
+	popup.classList.toggle("hidden");
+});
+
+lastMsgIcon.addEventListener("mouseleave", () => {
+	const popup = lastMsgIcon.lastElementChild;
+	popup.classList.toggle("hidden");
+});
+
+profileIcon.addEventListener("mouseenter", () => {
+	const popup = document.querySelector(".profile__popup")
+	popup.classList.toggle("hidden");
+});
+
+profileIcon.addEventListener("mouseleave", () => {
+	const popup = document.querySelector(".profile__popup")
+	popup.classList.toggle("hidden");
+});
 
 addRandomNum();
 handleCurrentYear();

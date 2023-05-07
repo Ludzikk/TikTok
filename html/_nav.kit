@@ -29,17 +29,37 @@
 				>
 			</li>
 			<li class="nav__links-list-item">
-				<a class="nav__links-list-item-msg-link" href="#"
-					><i
+				<a class="nav__links-list-item-msg-link msg" href="#">
+					<div class="msg__popup hidden">
+						<div class="msg__popup-one"></div>
+						<div class="msg__popup-two"></div>
+					</div>
+					<i
 						class="fa-regular fa-paper-plane nav__links-list-item-msg-link-icon"
 					></i
 				></a>
 			</li>
 			<li class="nav__links-list-item">
-				<i class="fa-regular fa-message nav__links-list-item-icon"></i>
+				<div class="lastmsg">
+					<i class="fa-regular fa-message nav__links-list-item-icon">
+					</i>
+					<div class="lastmsg__popup hidden">
+						<div class="lastmsg__popup-one"></div>
+						<div class="lastmsg__popup-two"></div>
+					</div>
+				</div>
+
 			</li>
 			<li class="nav__links-list-item">
-				<a class="nav__links-list-item-profile-link" href="#">
+				<a class="nav__links-list-item-profile-link profile" href="#">
+					<div class="profile__popup hidden">
+						<ul class="profile__popup-list">
+							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Pokaż profile</a></li>
+							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Ustawienia</a></li>
+							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Język</a></li>
+							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Wyloguj</a></li>
+						</ul>
+					</div>
 					<img
 						class="nav__links-list-item-profile-link-picture"
 						src="./dist/img/profilepicture.jpg"
