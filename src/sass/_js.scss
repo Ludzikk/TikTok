@@ -7,3 +7,13 @@
 .hidden {
     display: none;
 }
+
+.clicked-follow {
+    border: 1px solid grey;
+    background-color: rgb(224, 224, 224);
+    color: black;
+
+    &:hover {
+        background-color: rgb(178, 178, 178);
+    }
+}

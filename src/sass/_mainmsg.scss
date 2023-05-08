@@ -1,0 +1,174 @@
+@use "./colors" as *;
+
+.main__messages {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 5em;
+	width: 1200px;
+	height: 90vh;
+
+    &-button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        .fa-arrow-right {
+            transform: rotate(180deg);
+        }
+    }
+
+	&-msg-names {
+		display: flex;
+		flex-direction: column;
+		margin: 0 1.5em;
+		width: 30%;
+		border: 1px solid $grey;
+		box-shadow: 0 0 15px rgb(204, 204, 204);
+
+		&-top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1em;
+			font-size: 1.8rem;
+
+			&-icon {
+				font-size: 2.4rem;
+			}
+		}
+
+		&-main-person {
+			display: flex;
+			padding: 0.2em;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $grey;
+			}
+
+			&-picture {
+				height: 60px;
+				width: 60px;
+				margin-left: 1em;
+				border-radius: 50%;
+			}
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				padding: 0 0 0 0.5em;
+				font-size: 1.4rem;
+
+				&-name {
+					font-weight: 700;
+				}
+
+				&-date {
+					color: grey;
+				}
+			}
+		}
+	}
+
+	&-sendmsg {
+		position: relative;
+		width: 65%;
+		border: 1px solid $grey;
+		box-shadow: 0 0 15px rgb(204, 204, 204);
+        overflow: hidden;
+
+		&-send {
+			position: absolute;
+			bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1em 2em;
+            background-color: white;
+
+			&-input {
+				width: 100%;
+                padding: 0.5em 0.25em;
+                font-size: 1.8rem;
+                border: 1px solid rgb(154, 154, 154);
+                border-radius: 10px;
+                box-shadow: 0 0 2px black;
+                outline: none;
+			}
+		}
+
+		&-top {
+			display: flex;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			padding: 1em;
+			border-bottom: 1px solid $grey;
+			background-color: #fff;
+			z-index: 2;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				padding: 0 0.5em;
+
+				&-name {
+					font-weight: 700;
+					text-decoration: none;
+					color: black;
+				}
+
+				&-nickname {
+					text-decoration: none;
+					color: grey;
+				}
+			}
+
+			&-avatar {
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+			}
+		}
+
+		&-msgbox {
+			height: 100vh;
+			margin-top: 93px;
+			padding: 1em 2em;
+			overflow-y: scroll;
+
+			&-sending,
+			&-reciver {
+				&-profile {
+					height: 30px;
+					width: 30px;
+					border-radius: 50%;
+				}
+
+				&-date {
+                    font-size: 1.2rem;
+					text-align: center;
+					color: grey;
+				}
+
+				&-msg {
+					padding: 0 0.5em;
+				}
+
+				&-container {
+					display: flex;
+					align-items: center;
+					padding: 2em 0;
+				}
+			}
+
+			&-reciver-container {
+				justify-content: flex-end;
+			}
+		}
+	}
+}

@@ -5,7 +5,15 @@ const amounts = document.querySelectorAll(
 const likeBtn = document.querySelectorAll(".heart");
 const msgIcon = document.querySelector(".msg");
 const lastMsgIcon = document.querySelector(".lastmsg");
-const profileIcon = document.querySelector(".nav__links-list-item-profile-link-picture")
+const profileIcon = document.querySelector(
+	".nav__links-list-item-profile-link-picture"
+);
+const followBtn = document.querySelectorAll(
+	".main__content-videobox-follow-button"
+);
+const msgBack = document.querySelector(".main__messages-button")
+const mainNormal = document.querySelector(".main__normal")
+const mainMsg = document.querySelector(".main__messages")
 let num;
 
 const handleCurrentYear = () => {
@@ -42,6 +50,29 @@ const likeVideo = () => {
 	});
 };
 
+const follow = () => {
+	followBtn.forEach((btn) => {
+		let clicked = false
+		btn.addEventListener("click", () => {
+			if(clicked === false) {
+				clicked = true;
+				btn.classList.add("clicked-follow")
+				btn.textContent = "Obserwuje"
+			} else if (clicked === true) {
+				clicked = false; 
+				btn.classList.remove("clicked-follow")
+				btn.textContent = "Obserwuj"
+			}
+		})
+	});
+};
+
+const switchToMsgSite = () => {
+	mainMsg.classList.toggle("hidden")
+	mainNormal.classList.toggle("hidden")
+
+}
+
 msgIcon.addEventListener("mouseenter", () => {
 	const popup = msgIcon.firstElementChild;
 	popup.classList.toggle("hidden");
@@ -62,16 +93,21 @@ lastMsgIcon.addEventListener("mouseleave", () => {
 	popup.classList.toggle("hidden");
 });
 
-profileIcon.addEventListener("mouseenter", () => {
-	const popup = document.querySelector(".profile__popup")
+profileIcon.addEventListener("click", () => {
+	const popup = document.querySelector(".profile__popup");
 	popup.classList.toggle("hidden");
 });
 
-profileIcon.addEventListener("mouseleave", () => {
-	const popup = document.querySelector(".profile__popup")
-	popup.classList.toggle("hidden");
-});
+msgBack.addEventListener("click", switchToMsgSite)
+msgIcon.addEventListener("click", () => {
+	if(!mainNormal.classList.contains("hidden")) {
+		switchToMsgSite();
+	} else {
+		return;
+	}
+})
 
 addRandomNum();
 handleCurrentYear();
 likeVideo();
+follow();

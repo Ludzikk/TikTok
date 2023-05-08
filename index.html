@@ -79,7 +79,7 @@
 				<a class="nav__links-list-item-profile-link profile" href="#">
 					<div class="profile__popup hidden">
 						<ul class="profile__popup-list">
-							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Pokaż profile</a></li>
+							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Pokaż profil</a></li>
 							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Ustawienia</a></li>
 							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Język</a></li>
 							<li class="profile__popup-list-item"><a class="profile__popup-list-item-link" href="#">Wyloguj</a></li>
@@ -95,7 +95,7 @@
 		</ul>
 	</div>
 </nav>
-		<main>
+		<main class="main__normal">
 	<nav class="nav-side">
 		<ul class="nav-side__list">
 			<li class="nav-side__list-item">
@@ -145,7 +145,12 @@
 						alt="Profile Picture"
 					/>
 					<div class="nav-side__list-item-text-right">
-						<p class="nav-side__list-item-text-right-text">Ludzik <sup class="nav-side__list-item-text-right-text-verified"><i class="fa-solid fa-check"></i></sup></p>
+						<p class="nav-side__list-item-text-right-text">
+							Ludzik
+							<sup class="nav-side__list-item-text-right-text-verified"
+								><i class="fa-solid fa-check"></i
+							></sup>
+						</p>
 						<p
 							class="nav-side__list-item-text-right-text nav-side__list-item-text-right-text--smaller"
 						>
@@ -205,7 +210,12 @@
 						alt="Profile Picture"
 					/>
 					<div class="nav-side__list-item-text-right">
-						<p class="nav-side__list-item-text-right-text">Maciek <sup class="nav-side__list-item-text-right-text-verified"><i class="fa-solid fa-check"></i></sup></p>
+						<p class="nav-side__list-item-text-right-text">
+							Maciek
+							<sup class="nav-side__list-item-text-right-text-verified"
+								><i class="fa-solid fa-check"></i
+							></sup>
+						</p>
 						<p
 							class="nav-side__list-item-text-right-text nav-side__list-item-text-right-text--smaller"
 						>
@@ -252,7 +262,12 @@
 						alt="Profile Picture"
 					/>
 					<div class="nav-side__list-item-text-right">
-						<p class="nav-side__list-item-text-right-text">Ma$a <sup class="nav-side__list-item-text-right-text-verified"><i class="fa-solid fa-check"></i></sup></p>
+						<p class="nav-side__list-item-text-right-text">
+							Ma$a
+							<sup class="nav-side__list-item-text-right-text-verified"
+								><i class="fa-solid fa-check"></i
+							></sup>
+						</p>
 						<p
 							class="nav-side__list-item-text-right-text nav-side__list-item-text-right-text--smaller"
 						>
@@ -317,8 +332,9 @@
 			><a href="#" class="nav-side__links-link">Nagrody</a
 			><a href="#" class="nav-side__links-link">Bezpieczeństwo</a
 			><a href="#" class="nav-side__links-link">Prawa autorskie</a>
-			<p class="nav-side__links-yeartext">&copy;<span class="nav-side__links-yeartext-year"></span>
-				TikTok</p>
+			<p class="nav-side__links-yeartext">
+				&copy;<span class="nav-side__links-yeartext-year"></span> TikTok
+			</p>
 		</div>
 	</nav>
 	<div class="main__content">
@@ -754,6 +770,94 @@
         </div>
 	</div>
 </div>
+	</div>
+</main>
+<main class="main__messages hidden">
+	<button class="main__messages-button">
+		<i class="fa-solid fa-arrow-right"></i>
+	</button>
+	<div class="main__messages-msg-names">
+		<div class="main__messages-msg-names-top">
+			<h2 class="main__messages-msg-names-top-header">Wiadomości</h2>
+			<i class="fa-solid fa-gear main__messages-msg-names-top-icon"></i>
+		</div>
+		<div class="main__messages-msg-names-main">
+			<div class="main__messages-msg-names-main-person">
+				<img
+					class="main__messages-msg-names-main-person-picture"
+					src="./dist/img/profile1.jpg"
+					alt="Profile Picutre"
+				/>
+				<div class="main__messages-msg-names-main-person-text">
+					<p class="main__messages-msg-names-main-person-text-name">Ludzik</p>
+					<p class="main__messages-msg-names-main-person-text-date">
+						Wysłano wiadomość 08.05.2023
+					</p>
+				</div>
+			</div>
+			<div class="main__messages-msg-names-main-person">
+				<img
+					class="main__messages-msg-names-main-person-picture"
+					src="./dist/img/profile2.jpg"
+					alt="Profile Picutre"
+				/>
+				<div class="main__messages-msg-names-main-person-text">
+					<p class="main__messages-msg-names-main-person-text-name">Jacek</p>
+					<p class="main__messages-msg-names-main-person-text-date">
+						Wysłano wiadomość 02.05.2023
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main__messages-sendmsg">
+		<div class="main__messages-sendmsg-top">
+			<img
+				class="main__messages-sendmsg-top-avatar"
+				src="./dist/img/profile1.jpg"
+				alt="Profile Picture"
+			/>
+			<div class="main__messages-sendmsg-top-text">
+				<a href="#" class="main__messages-sendmsg-top-text-name">Ludzik</a>
+				<a href="#" class="main__messages-sendmsg-top-text-nickname">@lodzik</a>
+			</div>
+		</div>
+		<div class="main__messages-sendmsg-msgbox">
+			<div class="main__messages-sendmsg-msgbox-sending">
+				<p class="main__messages-sendmsg-msgbox-sending-date">
+					8 maja 2023 roku 15:45
+				</p>
+				<div class="main__messages-sendmsg-msgbox-sending-container">
+					<img
+						src="./dist/img/profile1.jpg"
+						alt=""
+						class="main__messages-sendmsg-msgbox-sending-profile"
+					/>
+					<p class="main__messages-sendmsg-msgbox-sending-msg">Siema</p>
+				</div>
+			</div>
+			<div class="main__messages-sendmsg-msgbox-reciver">
+				<p class="main__messages-sendmsg-msgbox-reciver-date">
+					8 maja 2023 roku 16:25
+				</p>
+				<div class="main__messages-sendmsg-msgbox-reciver-container">
+					<p class="main__messages-sendmsg-msgbox-reciver-msg">Witam</p>
+					<img
+						src="./dist/img/profile2.jpg"
+						alt=""
+						class="main__messages-sendmsg-msgbox-reciver-profile"
+					/>
+				</div>
+			</div>
+			
+		</div>
+		<div class="main__messages-sendmsg-send">
+			<input
+				class="main__messages-sendmsg-send-input"
+				type="text"
+				placeholder="Wyślij wiadomość..."
+			/>
+		</div>
 	</div>
 </main>
 		<script src="./dist/js/script.min.js"></script>
