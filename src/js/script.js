@@ -11,9 +11,10 @@ const profileIcon = document.querySelector(
 const followBtn = document.querySelectorAll(
 	".main__content-videobox-follow-button"
 );
-const msgBack = document.querySelector(".main__messages-button")
-const mainNormal = document.querySelector(".main__normal")
-const mainMsg = document.querySelector(".main__messages")
+const msgBack = document.querySelector(".main__messages-button");
+const mainNormal = document.querySelector(".main__normal");
+const mainMsg = document.querySelector(".main__messages");
+const msgInput = document.querySelector(".main__messages-sendmsg-send-input");
 let num;
 
 const handleCurrentYear = () => {
@@ -52,26 +53,71 @@ const likeVideo = () => {
 
 const follow = () => {
 	followBtn.forEach((btn) => {
-		let clicked = false
+		let clicked = false;
 		btn.addEventListener("click", () => {
-			if(clicked === false) {
+			if (clicked === false) {
 				clicked = true;
-				btn.classList.add("clicked-follow")
-				btn.textContent = "Obserwuje"
+				btn.classList.add("clicked-follow");
+				btn.textContent = "Obserwuje";
 			} else if (clicked === true) {
-				clicked = false; 
-				btn.classList.remove("clicked-follow")
-				btn.textContent = "Obserwuj"
+				clicked = false;
+				btn.classList.remove("clicked-follow");
+				btn.textContent = "Obserwuj";
 			}
-		})
+		});
 	});
 };
 
 const switchToMsgSite = () => {
-	mainMsg.classList.toggle("hidden")
-	mainNormal.classList.toggle("hidden")
+	mainMsg.classList.toggle("hidden");
+	mainNormal.classList.toggle("hidden");
+};
 
-}
+const createComment = () => {
+	const date = new Date();
+	const month = date.getUTCMonth();
+	let monthName;
+
+	if (month === 4) {
+		monthName = "maja";
+	}
+
+	const dateText = document.createElement("p");
+	const msg = document.createElement("p");
+	const msgBox = document.createElement("div");
+	const profilePic = document.createElement("img");
+	const container = document.createElement("div");
+	const chat = document.querySelector(".main__messages-sendmsg-msgbox");
+
+	container.setAttribute("class", "main__messages-sendmsg-msgbox-reciver");
+
+	profilePic.setAttribute("src", "./dist/img/profile2.jpg");
+	profilePic.setAttribute("alt", "Profile Picture");
+	profilePic.setAttribute(
+		"class",
+		"main__messages-sendmsg-msgbox-reciver-profile"
+	);
+
+	msgBox.setAttribute(
+		"class",
+		"main__messages-sendmsg-msgbox-reciver-container"
+	);
+	dateText.setAttribute("class", "main__messages-sendmsg-msgbox-reciver-date");
+	msg.setAttribute("class", "main__messages-sendmsg-msgbox-reciver-msg");
+
+	dateText.textContent = `${date.getDay()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
+	msg.textContent = msgInput.value;
+
+	if (msg.textContent !== "") {
+		chat.append(container);
+		container.append(dateText, msgBox);
+		msgBox.append(msg, profilePic);
+		console.log(container);
+		msgInput.value = "";
+	} else {
+		return;
+	}
+};
 
 msgIcon.addEventListener("mouseenter", () => {
 	const popup = msgIcon.firstElementChild;
@@ -98,14 +144,22 @@ profileIcon.addEventListener("click", () => {
 	popup.classList.toggle("hidden");
 });
 
-msgBack.addEventListener("click", switchToMsgSite)
+msgBack.addEventListener("click", switchToMsgSite);
 msgIcon.addEventListener("click", () => {
-	if(!mainNormal.classList.contains("hidden")) {
+	if (!mainNormal.classList.contains("hidden")) {
 		switchToMsgSite();
 	} else {
 		return;
 	}
-})
+});
+
+msgInput.addEventListener("keydown", (e) => {
+	if (e.key === "Enter" && msgInput !== "") {
+		createComment();
+	} else {
+		return;
+	}
+});
 
 addRandomNum();
 handleCurrentYear();
