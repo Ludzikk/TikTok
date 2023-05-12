@@ -91,7 +91,7 @@ const createComment = () => {
 
 	container.setAttribute("class", "main__messages-sendmsg-msgbox-reciver");
 
-	profilePic.setAttribute("src", "./dist/img/profile2.jpg");
+	profilePic.setAttribute("src", "./dist/img/profilepicture.jpg");
 	profilePic.setAttribute("alt", "Profile Picture");
 	profilePic.setAttribute(
 		"class",
@@ -105,14 +105,13 @@ const createComment = () => {
 	dateText.setAttribute("class", "main__messages-sendmsg-msgbox-reciver-date");
 	msg.setAttribute("class", "main__messages-sendmsg-msgbox-reciver-msg");
 
-	dateText.textContent = `${date.getDay()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
+	dateText.textContent = `${date.getDate()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
 	msg.textContent = msgInput.value;
 
 	if (msg.textContent !== "") {
 		chat.append(container);
 		container.append(dateText, msgBox);
 		msgBox.append(msg, profilePic);
-		console.log(container);
 		msgInput.value = "";
 	}
 
@@ -155,13 +154,12 @@ const createCommentSender = () => {
 	dateText.setAttribute("class", "main__messages-sendmsg-msgbox-sending-date");
 	msg.setAttribute("class", "main__messages-sendmsg-msgbox-sending-msg");
 
-	dateText.textContent = `${date.getDay()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
+	dateText.textContent = `${date.getDate()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
 	msg.textContent = msgInput.value;
 
 		chat.append(container);
 		container.append(dateText, msgBox);
 		msgBox.append(profilePic, msg);
-		console.log(container);
 		msg.textContent = messages[randomMsg];
 };
 
