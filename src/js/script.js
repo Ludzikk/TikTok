@@ -114,9 +114,55 @@ const createComment = () => {
 		msgBox.append(msg, profilePic);
 		console.log(container);
 		msgInput.value = "";
-	} else {
-		return;
 	}
+
+	setTimeout(() => {
+		createCommentSender()
+	}, Math.floor(Math.random() * 4000 + 1000))
+};
+
+const createCommentSender = () => {
+	const date = new Date();
+	const month = date.getUTCMonth();
+	let monthName;
+	const messages = ["Siema", "No elo", "Kumulala", "Dobrze", "Jestem programistą HTML", "15k jako programista po 2 tygodniach", "Umiem html i css chyba zaczne rozsyłać cv", "Kup kurs", "Ale essa", "Kupiłem kota"];
+	const randomMsg = Math.floor(Math.random() * messages.length);
+
+	if (month === 4) {
+		monthName = "maja";
+	}
+
+	const dateText = document.createElement("p");
+	const msg = document.createElement("p");
+	const msgBox = document.createElement("div");
+	const profilePic = document.createElement("img");
+	const container = document.createElement("div");
+	const chat = document.querySelector(".main__messages-sendmsg-msgbox");
+
+	container.setAttribute("class", "main__messages-sendmsg-msgbox-sending");
+
+	profilePic.setAttribute("src", "./dist/img/profile1.jpg");
+	profilePic.setAttribute("alt", "Profile Picture");
+	profilePic.setAttribute(
+		"class",
+		"main__messages-sendmsg-msgbox-sending-profile"
+	);
+
+	msgBox.setAttribute(
+		"class",
+		"main__messages-sendmsg-msgbox-sending-container"
+	);
+	dateText.setAttribute("class", "main__messages-sendmsg-msgbox-sending-date");
+	msg.setAttribute("class", "main__messages-sendmsg-msgbox-sending-msg");
+
+	dateText.textContent = `${date.getDay()} ${monthName} ${date.getFullYear()} roku ${date.getHours()}:${date.getMinutes()}`;
+	msg.textContent = msgInput.value;
+
+		chat.append(container);
+		container.append(dateText, msgBox);
+		msgBox.append(profilePic, msg);
+		console.log(container);
+		msg.textContent = messages[randomMsg];
 };
 
 msgIcon.addEventListener("mouseenter", () => {
